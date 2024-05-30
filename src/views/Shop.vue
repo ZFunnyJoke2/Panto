@@ -1,10 +1,12 @@
 <script>
-  import TheHeader from "@/components/HomePageComponents/TheHeader.vue";
+  import TheHeader from "@/components/AllUsageComponents/TheHeader.vue";
   import Chairs from "@/components/ShopComponents/Chairs.vue";
   import Beds from "@/components/ShopComponents/Beds.vue";
   import Sofa from "@/components/ShopComponents/Sofa.vue"
+  import TheFooter from "@/components/AllUsageComponents/TheFooter.vue";
   export default {
     components:{
+      TheFooter,
       TheHeader,
       Chairs,
       Beds,
@@ -21,14 +23,16 @@
       <Beds/>
       <Sofa/>
     </div>
+    <TheFooter/>
   </div>
 </template>
 
-<style>
+<style scoped>
 .parallax {
   background: url(../assets/img/background.jpg) fixed no-repeat;
   background-size: cover;
   position: relative;
   box-sizing: border-box;
 }
+
 </style>

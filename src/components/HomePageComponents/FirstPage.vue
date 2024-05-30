@@ -1,12 +1,10 @@
 <template>
   <section class="text-block">
-    <p style="">{{ content }}</p>
-    <form v-if="isLastPage" @submit.prevent="search">
-      <input type="text" v-model="searchQuery" placeholder="Search furniture">
-      <button class="search-btn" type="submit">
-        <img src="" alt="SearchBtn"/>
-      </button>
-    </form>
+      <div class="card-wrapper">
+        <div class="card">
+          <p style="">{{ content }}</p>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -23,50 +21,55 @@ export default {
       default: false
     }
   },
-  data() {
-    return {
-      searchQuery: ''
-    };
-  },
-  methods: {
-    search() {
-      alert('Поиск: ' + this.searchQuery);
-      this.searchQuery = '';
-    }
-  }
 }
 </script>
 
-<style>
-.text-block {
-  margin: 1rem 0;
-  padding: 60px;
-  border: 3px solid #333;
+<style scoped>
+
+.card-wrapper {
+  padding-top: 30px;
+  margin-left: -800px;
+}
+
+.card {
+  color: rgba(255, 255, 255, 0);
   border-radius: 10px;
-  background-color: #f9f9f9;
-  max-width: 500px;
+  filter: drop-shadow(0 5px 10px #ffffff);
+  width: 700px;
+  height: 180px;
+  font-size: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  transition: 0.6s ease-in;
 }
 
-.text-block p {
-  margin: 0.2rem 0;
-  font-size: 35px;
-  font-weight: bold;
+.card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -15px;
+  right: -15px;
+  background: #333;
+  height:220px;
+  width: 25px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out;
 }
 
-.text-block form {
-  margin-top: 1rem;
-  display: flex;
+.card:hover::before{
+  transition-delay:0.2s ;
+  transform: scale(60);
 }
 
-.text-block input[type="text"] {
-  flex: 1;
-  padding: 0.5rem;
+.card:hover{
+  color: #ffffff;
 }
 
-.search-btn{
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+.card p{
+  padding: 10px 0;
 }
 </style>

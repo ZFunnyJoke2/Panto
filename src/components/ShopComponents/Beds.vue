@@ -1,8 +1,20 @@
 <template>
-  <div id="beds">
-    <h1>Main Beds</h1>
+  <div class="bed">
+    <h1>Beds</h1>
+    <p class="p">
+      <span>High-Quality Materials:</span> Beds at Panto Furniture are crafted from durable materials such as solid wood, metal, and upholstered fabrics, ensuring both durability and aesthetic appeal.
+      <br>
+      <span>Comfortable Design:</span> The beds are designed with comfort in mind, featuring sturdy frames and supportive slats or box springs to provide a comfortable sleeping experience.
+      <br>
+      <span>Variety of Styles:</span> Panto Furniture offers a wide range of bed styles, including platform beds, sleigh beds, canopy beds, and more, catering to various tastes and preferences.
+    </p>
+    <div class="description">
+      <div>
+      </div>
+    </div>
     <div class="card__container">
       <div v-for="(bed, index) in visibleBeds" :key="index" class="card">
+        <img :src="bed.image" alt="изображение">
         <div class="card__content">
           <p class="card__name">{{ bed.name }}</p>
           <p class="card__description">{{ bed.description }}</p>
@@ -17,12 +29,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import bedsData from '@/components/data/bed.json';
+import { ref, onMounted } from 'vue';
 
-const beds = ref(bedsData);
-const visibleBeds = ref(beds.value.slice(0, 5));
+const beds = ref([]);
+const visibleBeds = ref([]);
 const showingAll = ref(false);
+
+const fetchBeds = async () => {
+  try {
+    const response = await fetch(' /data/bed.json');
+    beds.value = await response.json();
+    visibleBeds.value = beds.value.slice(0, 5);
+  } catch (error) {
+    console.error('Ошибка загрузки данных:', error);
+  }
+};
 
 const showAll = () => {
   visibleBeds.value = beds.value;
@@ -32,15 +53,46 @@ const showAll = () => {
 const showLess = () => {
   visibleBeds.value = beds.value.slice(0, 5);
   showingAll.value = false;
-};
+}
 
 const addToCart = (bed) => {
-  // Здесь можно реализовать логику добавления кровати в корзину
   console.log(`Добавлено в корзину: ${bed.name}`);
 };
+
+onMounted(() => {
+  fetchBeds();
+});
 </script>
 
+
 <style>
+.bed h1{
+  padding-top: 30px;
+  text-align: center;
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+  padding-bottom: 30px;
+}
+.p{
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+  text-align: center;
+  line-height: 100px;
+  background: rgba(30, 30, 30, 0.59);
+  border: 4px solid #1E1E1E;
+  width: 83%;
+}
+.p span{
+  color: orange;
+}
 .card__container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -96,8 +148,12 @@ const addToCart = (bed) => {
 .card__name{
   margin: 0;
   font-size: 24px;
-  color: #c82222;
-  font-weight: 700;
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;  font-weight: 700;
 }
 
 .card:hover img {

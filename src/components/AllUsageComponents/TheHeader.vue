@@ -45,9 +45,7 @@ export default {
               <li><router-link to="/shop" @click="scrollToBottom('sofa','end')">Sofa</router-link></li>
             </ul>
           </li>
-          <li><router-link to="/shop">Shop</router-link></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><router-link to="/contact">Contact</router-link></li>
         </ul>
       </nav>
       <div class="cart">
@@ -65,6 +63,7 @@ export default {
 .header {
   background-color: #333;
   color: white;
+  height: 44px;
   text-shadow:
       -1px -1px 0 black,
       1px -1px 0 black,
@@ -86,7 +85,7 @@ export default {
   color: #f9f9f9;
 }
 .home:hover{
-  color: #333333;
+  color: orange;
 }
 .nav ul {
   list-style: none;

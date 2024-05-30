@@ -33,9 +33,9 @@ export default {
         </ul>
         <ul class="list">
           <li><span class="orange">Follow Us</span></li>
-          <li><img src="@/assets/img/001-facebook.png" alt="Facebook"><a href="#">Facebook</a></li>
-          <li><img src="@/assets/img/003-twitter.png" alt="Twitter"><a href="#">Twitter</a></li>
-          <li><img src="@/assets/img/004-instagram.png" alt="Instagram"><a href="#">Instagram</a></li>
+          <li><img src="../../assets/img/001-facebook.png" alt="Facebook"><a href="#">Facebook</a></li>
+          <li><img src="../../assets/img/003-twitter.png" alt="Twitter"><a href="#">Twitter</a></li>
+          <li><img src="../../assets/img/004-instagram.png" alt="Instagram"><a href="#">Instagram</a></li>
         </ul>
       </div>
     </div>
@@ -50,7 +50,7 @@ export default {
 .footer{
   height: 450px;
   margin-top: 10rem;
-  background: #F7F7F7;
+  background: #979797;
 }
 .footer-info{
   display: flex;
@@ -62,6 +62,9 @@ export default {
 }
 .orange{
   color: darkorange;
+}
+.panto h2{
+  color: orange;
 }
 .list{
   list-style: none;

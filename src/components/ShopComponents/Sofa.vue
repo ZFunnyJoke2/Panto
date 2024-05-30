@@ -1,8 +1,20 @@
 <template>
-  <div id="sofa">
-    <h1>Main Sofas</h1>
+  <div class="sofa">
+    <h1>Sofas</h1>
+    <p class="p">
+      <span>High-Quality Materials:</span> Sofas at Panto Furniture are made from durable and long-lasting materials such as leather, suede, and high-quality fabrics. This ensures the longevity and wear resistance of the furniture.
+      <br>
+      <span>Comfort and Ergonomics:</span> The sofas are designed with user comfort in mind. They feature soft cushions and supportive backrests, providing maximum comfort for extended use.
+      <br>
+      <span>Modern Design:</span> The sofa models showcase modern and stylish designs that easily fit into any interior. The selection includes various styles, from minimalism to classic.
+    </p>
+    <div class="description">
+      <div>
+      </div>
+    </div>
     <div class="card__container">
       <div v-for="(sofa, index) in visibleSofas" :key="index" class="card">
+        <img :src="sofa.image" alt="изображение">
         <div class="card__content">
           <p class="card__name">{{ sofa.name }}</p>
           <p class="card__description">{{ sofa.description }}</p>
@@ -17,12 +29,22 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import sofasData from '@/components/data/sofa.json';
+import { ref, onMounted } from 'vue';
 
-const sofas = ref(sofasData);
-const visibleSofas = ref(sofas.value.slice(0, 5));
+
+const sofas = ref([]);
+const visibleSofas = ref([]);
 const showingAll = ref(false);
+
+const fetchSofas = async () => {
+  try {
+    const response = await fetch('/data/sofa.json');
+    sofas.value = await response.json();
+    visibleSofas.value = sofas.value.slice(0, 5);
+  } catch (error) {
+    console.error('Ошибка загрузки данных:', error);
+  }
+};
 
 const showAll = () => {
   visibleSofas.value = sofas.value;
@@ -32,20 +54,53 @@ const showAll = () => {
 const showLess = () => {
   visibleSofas.value = sofas.value.slice(0, 5);
   showingAll.value = false;
-};
+}
 
 const addToCart = (sofa) => {
   // Здесь можно реализовать логику добавления дивана в корзину
   console.log(`Добавлено в корзину: ${sofa.name}`);
 };
+
+onMounted(() => {
+  fetchSofas();
+});
 </script>
 
+
+
+
 <style>
+.sofa h1{
+  padding-top: 30px;
+  text-align: center;
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+  padding-bottom: 30px;
+}
+.p{
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+  text-align: center;
+  line-height: 100px;
+  background: rgba(30, 30, 30, 0.59);
+  width: 83%;
+}
+.p span{
+  color: orange;
+}
 .card__container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-
+  padding-top: 50px;
 }
 
 .card {
@@ -96,7 +151,12 @@ const addToCart = (sofa) => {
 .card__name{
   margin: 0;
   font-size: 24px;
-  color: #c82222;
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
   font-weight: 700;
 }
 

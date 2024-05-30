@@ -112,7 +112,8 @@ export default {
   text-align: center;
 }
 .title h1{
-  color: white;
+  padding-bottom: 30px;
+  color: orange;
   text-shadow:
       -1px -1px 0 black,
       1px -1px 0 black,
@@ -150,7 +151,7 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin-left: 750px;
+  margin-left: 665px;
 }
 
 .radio-inputs > * {

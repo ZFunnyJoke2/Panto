@@ -1,26 +1,15 @@
 <template>
-  <div id="chair">
+  <div class="chair">
     <h1>Chairs</h1>
+    <p class="p">
+      <span>Versatility:</span> Many chair models are versatile and can be used in multiple settings, from dining rooms and living rooms to home offices and bedrooms, providing flexibility in decorating and furnishing.
+      <br>
+      <span>Sturdy Construction:</span> Chairs are built with sturdy construction methods and quality craftsmanship, ensuring stability and reliability for everyday use.
+      <br>
+      <span>Affordable Pricing:</span> Despite the high quality and design options, Panto Furniture offers chairs at competitive prices, making them accessible to a wide range of customers.
+    </p>
     <div class="description">
       <div>
-        <p>  The Sopranos is a crime drama TV series created by David Chase, and
-          widely recognized as one of the greatest series of all time.
-
-          It follows protagonist Tony Soprano (James Gandolfini), a New Jersey
-          -based Italian-American mob boss, who struggles to manage his family and
-          criminal life. Suffering from panic attacks, Tony attends therapy sessions
-          with psychiatrist Jennifer Melfi (Lorraine Bracco), whom he confides in.
-
-          Throughout the six seasons of the series, Tony has to contend with his
-          uncle, Junior (Dominic Chianese); his wife, Carmela (Edie Falco); and
-          threats from mobsters both within the family and external, such as the
-          New York City-based Lupertazzi family.
-
-          A prequel film to The Sopranos has been confirmed. Titled The Many Saints
-          of Newark, it centers on the 1967
-          Newark riots and will feature a young Tony Soprano (Michael Gandolfini),
-          among other characters. The film was
-          released on September 24, 2021.</p>
       </div>
     </div>
     <div class="card__container">
@@ -40,12 +29,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import chairsData from '@/components/data/chair.json';
+import { ref, onMounted } from 'vue';
 
-const chairs = ref(chairsData);
-const visibleChairs = ref(chairs.value.slice(0, 5));
+const chairs = ref([]);
+const visibleChairs = ref([]);
 const showingAll = ref(false);
+
+const fetchChairs = async () => {
+  try {
+    const response = await fetch('/data/chair.json');
+    chairs.value = await response.json();
+    visibleChairs.value = chairs.value.slice(0, 5);
+  } catch (error) {
+    console.error('Ошибка загрузки данных:', error);
+  }
+};
 
 const showAll = () => {
   visibleChairs.value = chairs.value;
@@ -56,14 +54,48 @@ const showLess = () => {
   visibleChairs.value = chairs.value.slice(0, 5);
   showingAll.value = false;
 }
+
 const addToCart = (chair) => {
   // Здесь можно реализовать логику добавления стула в корзину
   console.log(`Добавлено в корзину: ${chair.name}`);
 };
+
+onMounted(() => {
+  fetchChairs();
+});
 </script>
 
 
-<style scoped>
+
+
+<style>
+.chair h1{
+  padding-top: 30px;
+  text-align: center;
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+  padding-bottom: 30px;
+}
+.p{
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+  text-align: center;
+  line-height: 100px;
+  background: rgba(30, 30, 30, 0.59);
+  border: 4px solid #1E1E1E;
+  width: 83%;
+}
+.p span{
+  color: orange;
+}
 .card__container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -119,7 +151,12 @@ const addToCart = (chair) => {
 .card__name{
   margin: 0;
   font-size: 24px;
-  color: #c82222;
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
   font-weight: 700;
 }
 

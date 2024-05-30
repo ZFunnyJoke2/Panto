@@ -25,7 +25,7 @@ export default {
   justify-content: space-between;
   margin: 5rem auto;
   max-width: 1400px;
-  background: #333;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .block {
@@ -34,7 +34,7 @@ export default {
   padding: 1rem;
   border: 3px solid #333;
   border-radius: 10px;
-  background-color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.57);
   text-align: left;
 }
 .block:first-child {
@@ -49,16 +49,19 @@ export default {
 .block:first-child p{
   font-weight: 600;
   font-size: 1.5rem;
+  color: white;
 }
 .block h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.2rem;
   font-weight: 800;
+  color: #ffffff;
 }
 
 .block p {
   margin: 0;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 800;
+  color: #979797;
 }
 </style>

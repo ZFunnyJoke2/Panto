@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import slides from '@/components/data/slider.json';
+import slides from '../../../public/data/slider.json';
 
 export default {
   name: 'SliderComponent',
@@ -35,17 +35,26 @@ export default {
 
 <style>
 .slider {
+  padding-top: 100px;
   position: relative;
   overflow: hidden;
   width: 100%;
   max-width: 1000px;
   margin: auto;
 }
-.slider h1{
+.slider h1 {
   text-align: center;
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
 }
 .slides {
   display: flex;
+  align-items: center;
+  width: 100%;
   transition: transform 0.5s ease-in-out;
 }
 .slide {
@@ -55,16 +64,24 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.slide i {
-  font-size: 50px;
-  margin-bottom: 10px;
+.slide p {
+  max-width: 60%;
+  margin: auto;
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
 }
 
 .nav-button {
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;

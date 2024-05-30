@@ -1,5 +1,5 @@
 <template>
-  <div id="Info">
+  <div class="container">
     <section class="experience">
       <div class="content">
         <img src="@/assets/img/info-main-sofa.png" alt="Living Room" class="experience-image" />
@@ -11,8 +11,8 @@
             in their fields, with an elegant and luxurious style and<br>
             with premium quality materials.
           </p>
-          <button>More info</button>
-          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
+          <button @click="toggleText">More info</button>
+          <div v-show="showText" class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
         </div>
       </div>
@@ -26,13 +26,8 @@
           for our environment, using a very expensive and famous<br>
           capital but at a relatively low price
         </p>
-        <button id="showText">More info</button>
-        <div id="Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
         <div class="material-images">
           <img src="@/assets/img/info-chair.png" alt="chair"/>
-          <img src="@/assets/img/info-sofa.png" alt="sofa"/>
-          <img src="@/assets/img/info-chairs.png" alt="chair"/>
         </div>
       </div>
     </section>
@@ -42,46 +37,104 @@
 <script>
 export default {
   data() {
-    return{
-      name: 'InformationText'
+    return {
+      showText: false
+    }
+  },
+  methods: {
+    toggleText() {
+      this.showText = !this.showText;
     }
   }
 }
 </script>
 
-<style>
-.experience .content {
-  display: flex;
-  align-items: center; /* Центрирование по вертикали */
-  justify-content: space-between; /* Распределение пространства между элементами */
-}
-.experience .experience-image {
-  max-width: 50%; /* Устанавливает максимальную ширину изображения */
-  height: auto; /* Сохраняет пропорции изображения */
-}
-.experience .experience-text {
-  max-width: 50%; /* Устанавливает максимальную ширину текста */
-  padding: 20px; /* Отступы вокруг текста */
-}
-.materials .content {
-  display: flex;
-  align-items: flex-start; /* Выравнивание по верхнему краю */
-  justify-content: space-between; /* Распределение пространства между текстом и изображениями */
+<style scoped>
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-top: 150px;
 }
 
-.materials .material-images {
+.content {
   display: flex;
-  flex-direction: column; /* Вертикальное расположение изображений */
-  align-items: flex-end; /* Выравнивание изображений по правому краю */
-  max-width: 50%; /* Ограничение ширины блока с изображениями */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.content h2{
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+  font-size: 3rem;
+}
+.content p{
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+  font-size: 1.5rem;
+}
+.experience,
+.materials {
+  margin-bottom: 40px;
 }
 
-.materials .material-images img {
-  max-width: 100%; /* Обеспечение адаптивности изображений */
-  height: auto; /* Сохранение пропорций изображений */
+.experience-text,
+.materials h2,
+.materials p {
+  margin-bottom: 20px;
+}
+.experience-text h2{
+  color: orange;
+}
+.content h2{
+  color: orange;
+}
+.experience-image,
+.material-images img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
-.materials .material-images .bottom-images img {
-  width: 48%; /* Устанавливает ширину нижних изображений */
+.experience h2,
+.materials h2 {
+  font-size: 32px;
+  font-weight: bold;
 }
+
+.experience p,
+.materials p,
+.text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgba(250, 159, 4, 0.85);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: rgba(250, 250, 250, 0.85);
+}
+
+.text {
+  color: #888;
+}
+
+
 </style>
