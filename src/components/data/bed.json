@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Platform Bed",
+    "description": "Modern platform bed with a sturdy frame and sleek design.",
+    "price": "399.99"
+  },
+  {
+    "name": "Upholstered Bed",
+    "description": "Elegant upholstered bed with a tufted headboard and soft fabric.",
+    "price": "499.99"
+  },
+  {
+    "name": "Storage Bed",
+    "description": "Functional storage bed with built-in drawers for extra space.",
+    "price": "599.99"
+  },
+  {
+    "name": "Bunk Bed",
+    "description": "Sturdy bunk bed perfect for kids' rooms and sleepovers.",
+    "price": "299.99"
+  },
+  {
+    "name": "Canopy Bed",
+    "description": "Luxurious canopy bed with four posts and a romantic design.",
+    "price": "699.99"
+  },
+  {
+    "name": "Sleigh Bed",
+    "description": "Classic sleigh bed with a curved headboard and footboard.",
+    "price": "799.99"
+  },
+  {
+    "name": "Murphy Bed",
+    "description": "Space-saving Murphy bed that folds into the wall when not in use.",
+    "price": "899.99"
+  },
+  {
+    "name": "Daybed",
+    "description": "Versatile daybed that serves as a sofa during the day and a bed at night.",
+    "price": "399.99"
+  },
+  {
+    "name": "Trundle Bed",
+    "description": "Convenient trundle bed with an extra mattress that pulls out from underneath.",
+    "price": "349.99"
+  },
+  {
+    "name": "Adjustable Bed",
+    "description": "Adjustable bed with customizable head and foot positions for maximum comfort.",
+    "price": "999.99"
+  },
+  {
+    "name": "Wooden Bed Frame",
+    "description": "Durable wooden bed frame with a natural finish.",
+    "price": "299.99"
+  },
+  {
+    "name": "Metal Bed Frame",
+    "description": "Strong metal bed frame with a minimalist design.",
+    "price": "199.99"
+  },
+  {
+    "name": "Poster Bed",
+    "description": "Elegant poster bed with tall posts and a traditional design.",
+    "price": "699.99"
+  },
+  {
+    "name": "Futon Bed",
+    "description": "Convertible futon bed that easily switches between a sofa and a bed.",
+    "price": "249.99"
+  },
+  {
+    "name": "Loft Bed",
+    "description": "Space-efficient loft bed with a raised sleeping area and space underneath.",
+    "price": "399.99"
+  }
+]

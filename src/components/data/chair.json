@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Ergonomic Office Chair",
+    "description": "Comfortable office chair with adjustable height and lumbar support.",
+    "price": "199.99"
+  },
+  {
+    "name": "Gaming Chair",
+    "description": "High-back racing style chair with adjustable armrests and headrest.",
+    "price": "149.99"
+  },
+  {
+    "name": "Dining Chair Set",
+    "description": "Set of 4 modern dining chairs with cushioned seats.",
+    "price": "249.99"
+  },
+  {
+    "name": "Wooden Rocking Chair",
+    "description": "Classic wooden rocking chair with a smooth finish.",
+    "price": "129.99"
+  },
+  {
+    "name": "Accent Chair",
+    "description": "Stylish accent chair with a velvet upholstery.",
+    "price": "89.99"
+  },
+  {
+    "name": "Folding Chair",
+    "description": "Portable folding chair ideal for events and extra seating.",
+    "price": "29.99"
+  },
+  {
+    "name": "Recliner Chair",
+    "description": "Comfortable recliner chair with footrest and adjustable back.",
+    "price": "299.99"
+  },
+  {
+    "name": "Bar Stool",
+    "description": "High bar stool with a cushioned seat and footrest.",
+    "price": "69.99"
+  },
+  {
+    "name": "Outdoor Patio Chair",
+    "description": "Durable patio chair made of weather-resistant materials.",
+    "price": "59.99"
+  },
+  {
+    "name": "Bean Bag Chair",
+    "description": "Soft bean bag chair filled with high-quality foam.",
+    "price": "79.99"
+  },
+  {
+    "name": "Children's Desk Chair",
+    "description": "Colorful desk chair designed for children with adjustable height.",
+    "price": "49.99"
+  },
+  {
+    "name": "Lounge Chair",
+    "description": "Comfortable lounge chair with an adjustable backrest.",
+    "price": "159.99"
+  },
+  {
+    "name": "Swivel Chair",
+    "description": "360-degree swivel chair with a sturdy base and padded seat.",
+    "price": "89.99"
+  },
+  {
+    "name": "Wingback Chair",
+    "description": "Elegant wingback chair with a high back and tufted design.",
+    "price": "199.99"
+  },
+  {
+    "name": "Massage Chair",
+    "description": "Luxury massage chair with multiple massage settings and heating function.",
+    "price": "499.99"
+  }
+]

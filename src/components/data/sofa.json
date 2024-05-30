@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Modern Sectional Sofa",
+    "description": "L-shaped sectional sofa with a contemporary design and comfortable cushions.",
+    "price": "999.99"
+  },
+  {
+    "name": "Leather Reclining Sofa",
+    "description": "Luxurious leather sofa with reclining seats and built-in cup holders.",
+    "price": "1499.99"
+  },
+  {
+    "name": "Sleeper Sofa",
+    "description": "Versatile sleeper sofa that easily converts into a bed for guests.",
+    "price": "799.99"
+  },
+  {
+    "name": "Mid-Century Modern Sofa",
+    "description": "Stylish mid-century modern sofa with wooden legs and tufted back.",
+    "price": "699.99"
+  },
+  {
+    "name": "Fabric Sofa",
+    "description": "Comfortable fabric sofa with removable covers for easy cleaning.",
+    "price": "499.99"
+  },
+  {
+    "name": "Chesterfield Sofa",
+    "description": "Classic Chesterfield sofa with deep button tufting and rolled arms.",
+    "price": "1199.99"
+  },
+  {
+    "name": "Convertible Futon Sofa",
+    "description": "Futon sofa that converts into a bed with ease, ideal for small spaces.",
+    "price": "299.99"
+  },
+  {
+    "name": "Outdoor Patio Sofa",
+    "description": "Weather-resistant patio sofa with cushions, perfect for outdoor lounging.",
+    "price": "599.99"
+  },
+  {
+    "name": "Loveseat Sofa",
+    "description": "Compact loveseat sofa with plush cushions and modern design.",
+    "price": "399.99"
+  },
+  {
+    "name": "Sectional Sofa with Chaise",
+    "description": "Spacious sectional sofa with a chaise lounge for extra comfort.",
+    "price": "1299.99"
+  },
+  {
+    "name": "Velvet Sofa",
+    "description": "Elegant velvet sofa with a smooth finish and luxurious feel.",
+    "price": "899.99"
+  },
+  {
+    "name": "Pull-Out Sofa Bed",
+    "description": "Sofa bed with a pull-out mattress, perfect for overnight guests.",
+    "price": "1099.99"
+  },
+  {
+    "name": "Reclining Sectional Sofa",
+    "description": "Sectional sofa with multiple reclining seats and a modern design.",
+    "price": "1599.99"
+  },
+  {
+    "name": "Chaise Lounge Sofa",
+    "description": "Elegant chaise lounge sofa with a stylish and comfortable design.",
+    "price": "799.99"
+  },
+  {
+    "name": "Upholstered Sofa",
+    "description": "High-quality upholstered sofa with a durable and attractive fabric.",
+    "price": "699.99"
+  }
+]
